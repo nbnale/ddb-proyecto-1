@@ -149,26 +149,28 @@ for (var i = 0; i < 5; i++) {
 }
 
 db.createCollection("anexos")
-db.anexos.insertOne({
-    "_id": arr_anexos[0],
-    "archivo": BinData(0, "xzczadafsdf423423423")
-})
-db.anexos.insertOne({
-    "_id": arr_anexos[1],
-    "archivo": BinData(0, "qeserqwfsdf423423423")
-})
-db.anexos.insertOne({
-    "_id": arr_anexos[2],
-    "archivo": BinData(0, "dasdfddafsdf42342342")
-})
-db.anexos.insertOne({
-    "_id": arr_anexos[3],
-    "archivo": BinData(0, "aaaaadafsdf423423423")
-})
-db.anexos.insertOne({
-    "_id": arr_anexos[4],
-    "archivo": BinData(0, "bbbaadafsdf423423423")
-})
+db.anexos.insertMany([
+    {
+        "_id": arr_anexos[0],
+        "archivo": BinData(0, "xzczadafsdf423423423")
+    },
+    {
+        "_id": arr_anexos[1],
+        "archivo": BinData(0, "qeserqwfsdf423423423")
+    },
+    {
+        "_id": arr_anexos[2],
+        "archivo": BinData(0, "dasdfddafsdf42342342")
+    },
+    {
+        "_id": arr_anexos[3],
+        "archivo": BinData(0, "aaaaadafsdf423423423")
+    },
+    {
+        "_id": arr_anexos[4],
+        "archivo": BinData(0, "bbbaadafsdf423423423")
+    }
+])
 
 var arr_proyectos = [];
 for (var i = 0; i < 1; i++) {
@@ -184,27 +186,27 @@ db.proyectos.insertOne(
             arr_estudiantes[0],
             arr_estudiantes[1]
         ],
-        "areas_disciplinares": [],
-        "objetivos": [],
-        "indic_logro": [],
+        "areas_disciplinares": ["fsdfsd", "fsdfdsf", "hckdkkd"],
+        "objetivos": ["kjlkjlkio", "qerwrewqrw", "ewrweiuoiuii"],
+        "indic_logro": ["klkklsfsdfsd", "fsdfsdf"],
         "fec_inicio": ISODate("2020-01-01T00:00:00.000+0000"),
         "fec_final": ISODate("2022-03-11T00:00:00.000+0000"),
         "financieros": [
             {
-                "tipo_actividad": "",
+                "tipo_actividad": "ewqrqwerweq qwerewr",
                 "costo": 0
             }
         ],
         "recursos_humanos": [
             {
-                "habilidad": ""
+                "habilidad": "dsfsdkljlkdf sdfskldfsdf"
             }
         ],
         "recu_fisi_tecno": [
             {
-                "tipo_rec": "",
-                "tipo": "",
-                "cantidad": 0
+                "tipo_rec": "Tecnologico",
+                "tipo": "Computadora",
+                "cantidad": 3
             }
         ],
         "anexos": [arr_anexos[0], arr_anexos[4]]
@@ -217,7 +219,7 @@ for (var i = 0; i < 2; i++) {
 
 db.createCollection("evaluaciones")
 db.evaluaciones.insertMany(
-    {
+    [{
         "_id": arr_evaluaciones[0],
         "evaluadores": [
             arr_personal[3],
@@ -234,11 +236,11 @@ db.evaluaciones.insertMany(
             arr_personal[0],
             arr_personal[2]
         ],
-        "fec_evaluacion": ISODate("2022-03-17"),
+        "fec_evaluacion": ISODate("2022-03-04"),
         "proyecto": arr_proyectos[0],
         "informe": "rwerrwerwer fjrwerwerfsdfsdfsdlsd jkflrwuoiuopuoipwererwersdkljfskl",
         "notas": [9, 10]
-    })
+    }])
 
 var arr_grupos = [];
 for (var i = 0; i < 1; i++) {
@@ -273,9 +275,9 @@ db.grupos_colaborativos.insertOne(
         ],
         "recu_fisi_tecno": [
             {
-                "tipo_rec": "Tecnologico",
-                "tipo": "fsdfsdfsdfsdfsdf",
-                "cantidad": 0
+                "tipo_rec": "Fisico",
+                "tipo": "Silla",
+                "cantidad": 10
             }
         ],
         "estado": "Activo",
